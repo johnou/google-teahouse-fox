@@ -1,14 +1,32 @@
 {
   "name": "iGoogle Tea House Theme",
-  "version": "0.0.1",
-  "manifest_version": 2,
+  "version": "0.0.2",
+  "manifest_version": 3,
   "description": "",
   "homepage_url": "https://just.johno.it",
-  "browser_action": { "default_title": "iGoogle Tea House Theme" },
-  "content_scripts": [{
-    "matches": [ "https://www.google.com/*", "https://www.google.com.au/*", "https://www.google.co.uk/*", "https://www.google.ca/*" ],
-    "run_at": "document_end",
-    "js": [ "inject.js" ]
-  }],
-  "web_accessible_resources": [ "00.jpg", "02.jpg", "0314.jpg", "04.jpg", "06.jpg", "08.jpg", "10.jpg", "12.jpg", "14.jpg", "16.jpg", "18.jpg", "20.jpg", "22.jpg" ]
+  "action": {
+    "default_title": "iGoogle Tea House Theme"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/*",
+        "https://www.google.com.au/*",
+        "https://www.google.co.uk/*",
+        "https://www.google.ca/*"
+      ],
+      "run_at": "document_idle",
+      "js": ["inject.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "00.jpg", "02.jpg", "0314.jpg", "04.jpg", "06.jpg",
+        "08.jpg", "10.jpg", "12.jpg", "14.jpg", "16.jpg",
+        "18.jpg", "20.jpg", "22.jpg"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
